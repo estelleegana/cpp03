@@ -2,5 +2,8 @@
 
 int main()
 {
-    std::cout << "hello" <<std::endl;
+    ClapTrap Hero = ClapTrap("Hero");
+    ClapTrap("Enemy");
+
+    Hero.attack("Enemy");
 }

@@ -11,11 +11,11 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = ClapTrap.cpp \
 	main.cpp \
 
-#objets
+#creation d'objets a partir des fichiers sources
 OBJS = $(SRCS:.cpp=.o)
 
 
-#compilation
+#compilations
 all: $(OBJS)
 	$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 
