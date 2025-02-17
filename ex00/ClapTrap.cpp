@@ -15,9 +15,36 @@ std::string ClapTrap::getName()
     return _name;
 }
 
+int ClapTrap::getH()
+{
+    return _hp;
+}
+
+int ClapTrap::getE()
+{
+    return _ep;
+}
+
+int ClapTrap::getA()
+{
+    return _ad;
+}
+
+//coute 1 energy poiny (ep)
 void ClapTrap::attack(const std::string &target)
 {
-    std::cout << "ClapTrap " << this->_name << " attacks ";
+    _ep = _ep - 1;
+    std::cout << _name << " attacks ";
     std::cout << target << ", causing ";
-    std::cout << _ad << " points of damage ! " << std::endl;
+    std::cout << _hp << " points of damage ! " << std::endl;
+}
+
+//coute 1 energy point (ep)
+void ClapTrap::beRepaired(unsigned int amount)
+{
+    _hp = _hp + amount;
+    _ep = _ep - 1;
+    std::cout << _name << " repairs itself and gets ";
+    std::cout << amount << " hit points back. (S)He has now a new total of ";
+    std::cout << _hp << " hit points ! " << std::endl;
 }
