@@ -2,6 +2,7 @@
 # define CLAPTRAP_HPP
 
 #include <iostream>
+# include <iomanip>//std::setw
 
 #define BOLD "\033[1m"
 #define RED "\033[38;2;255;0;0m"
@@ -37,6 +38,7 @@ class ClapTrap {
         void attack(const std::string &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+        void displayInfos();
 };
 
 #endif
