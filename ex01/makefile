@@ -10,6 +10,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 #fichiers sources
 SRCS = ClapTrap.cpp \
 	main.cpp \
+	ScavTrap.cpp \
 
 #creation d'objets a partir des fichiers sources
 OBJS = $(SRCS:.cpp=.o)

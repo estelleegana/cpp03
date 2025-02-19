@@ -1,30 +1,14 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-    ClapTrap h("Hero");
-    ClapTrap copy(h);
-    ClapTrap e;
-    ClapTrap &target = e;
+    ScavTrap h("Derive");
     
+    h.displayInfos();
     h.beRepaired(100);
-    h.attack(target.getName());
-    h.attack(target.getName());
+    h.attack("a sheep");
+    h.takeDamage(100);
+    h.guardGate();
     h.displayInfos();
-    h.attack(target.getName());
-    h.attack(target.getName());
-    h.takeDamage(50);
-    h.displayInfos();
-    h.attack(target.getName());
-    h.attack(target.getName());
-    h.displayInfos();
-    h.attack(target.getName());
-    h.attack(target.getName());
-    h.attack(target.getName());
-    h.attack(target.getName());
-    h.beRepaired(100);
-    h.displayInfos();
-    e.displayInfos();
-    target.displayInfos();
-    target.displayInfos();
 }
