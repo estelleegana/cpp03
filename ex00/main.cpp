@@ -26,6 +26,5 @@ int main()
     h.displayInfos();
     e.displayInfos();
     target.displayInfos();
-    target = h;
     target.displayInfos();
 }
