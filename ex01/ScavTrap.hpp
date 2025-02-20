@@ -12,11 +12,11 @@
 
 class ScavTrap : public ClapTrap
 {
-    // private:
-    //     std::string _name;
-    //     int _hp;
-    //     int _ep;
-    //     int _ad;
+    private:
+        std::string _name;
+        int _hp;
+        int _ep;
+        int _ad;
 
     public:
         ScavTrap();//constructeur derive par defaut

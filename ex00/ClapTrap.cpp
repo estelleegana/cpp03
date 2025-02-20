@@ -15,6 +15,10 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 //Constructeur de recopie
 ClapTrap::ClapTrap(const ClapTrap &autre)
 {
+    _name = autre._name;
+    _hp = autre._hp;
+    _ep = autre._ep;
+    _ad = autre._ad;
     *this = autre;
     std::cout << BOLD GREEN << "Constructeur de recopie: " << RESET << autre._name << " copy is born" << std::endl;
 }

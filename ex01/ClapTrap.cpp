@@ -1,13 +1,13 @@
 #include "ClapTrap.hpp"
 
 //Constructeur par defaut
-ClapTrap::ClapTrap() : _hp(10), _ep(10), _ad(0)
+ClapTrap::ClapTrap() : _hp(100), _ep(50), _ad(20)
 {
     std::cout << BOLD GREEN << "Constructeur par defaut: " << RESET <<_name << " is born" << std::endl;
 }
 
 //Constructeur ac nom
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(100), _ep(50), _ad(20)
 {
     std::cout << BOLD GREEN << "Constructeur: " << RESET <<_name << " is born" << std::endl;
 }
@@ -15,6 +15,10 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 //Constructeur de recopie
 ClapTrap::ClapTrap(const ClapTrap &autre)
 {
+    _name = autre._name;
+    _hp = autre._hp;
+    _ep = autre._ep;
+    _ad = autre._ad;
     *this = autre;
     std::cout << BOLD GREEN << "Constructeur de recopie: " << RESET << autre._name << " copy is born" << std::endl;
 }
