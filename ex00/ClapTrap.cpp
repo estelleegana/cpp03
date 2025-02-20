@@ -1,38 +1,38 @@
 #include "ClapTrap.hpp"
 
 //Constructeur par defaut
-ClapTrap::ClapTrap() : _hp(10), _ep(10), _ad(0)
+ClapTrap::ClapTrap()
 {
-    std::cout << BOLD GREEN << "Constructeur par defaut: " << RESET <<_name << " is born" << std::endl;
+    std::cout << BOLD GREEN << "Constructeur par defaut (ClapTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
 //Constructeur ac nom
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 {
-    std::cout << BOLD GREEN << "Constructeur: " << RESET <<_name << " is born" << std::endl;
+    std::cout << BOLD GREEN << "Constructeur (ClaptTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
 //Constructeur de recopie
 ClapTrap::ClapTrap(const ClapTrap &autre)
 {
-    _name = autre._name;
-    _hp = autre._hp;
-    _ep = autre._ep;
-    _ad = autre._ad;
     *this = autre;
-    std::cout << BOLD GREEN << "Constructeur de recopie: " << RESET << autre._name << " copy is born" << std::endl;
+    std::cout << BOLD GREEN << "Constructeur de recopie (ClapTrap): " << RESET << autre._name << " copy is born" << std::endl;
 }
 
 //Surcharge de l'operateur d'affectation
 ClapTrap &ClapTrap::operator=(const ClapTrap &autre)
 {
+    _name = autre._name;
+    _hp = autre._hp;
+    _ep = autre._ep;
+    _ad = autre._ad;
     return (*this);
 }
 
 //Destructeur
 ClapTrap::~ClapTrap()
 {
-    std::cout << BOLD RED << "Destructeur: " << RESET << _name << " seize to exist" << std::endl;
+    std::cout << BOLD RED << "Destructeur (ClapTrap): " << RESET << _name << " seize to exist" << std::endl;
 }
 
 std::string ClapTrap::getName()
@@ -61,7 +61,7 @@ void ClapTrap::attack(const std::string &target)
     if (_ep > 0 && _hp > 0)
     {
         _ep = _ep - 1;
-        std::cout << _name << " attacks ";
+        std::cout << "ClapTrap " << _name << " attacks ";
         std::cout << target << ", causing ";
         std::cout << _hp << " points of damage ! " << std::endl;
     }
@@ -80,10 +80,10 @@ void ClapTrap::takeDamage(unsigned int amount)
             _hp = _hp - amount;
         else
             _hp = 0;
-        std::cout << _name << " lost " << amount << " hit points." << std::endl;
+        std::cout << "ClapTrap " << _name << " lost " << amount << " hit points." << std::endl;
     }
     else
-        std::cout << _name << " already has 0 hit points." << std::endl;
+        std::cout << "ClapTrap " << _name << " already has 0 hit points." << std::endl;
 }
 
 //coute 1 energy point (ep)
@@ -93,11 +93,11 @@ void ClapTrap::beRepaired(unsigned int amount)
     {
         _hp = _hp + amount;
         _ep = _ep - 1;
-        std::cout << _name << " repairs itself and gets ";
+        std::cout << "ClapTrap " << _name << " repairs itself and gets ";
         std::cout << amount << " hit points back." << std::endl;
     }
     else
-        std::cout << _name << " cant be repaired cause (s)he has no Energy points." << std::endl;
+        std::cout << "ClapTrap " << _name << " cant be repaired cause (s)he has no Energy points." << std::endl;
 }
 
 //affiche les pts restants
