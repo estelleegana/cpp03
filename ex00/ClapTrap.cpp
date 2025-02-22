@@ -3,7 +3,7 @@
 //Constructeur par defaut
 ClapTrap::ClapTrap()
 {
-    std::cout << BOLD GREEN << "Constructeur par defaut (ClapTrap): " << RESET <<_name << " is born" << std::endl;
+    std::cout << BOLD GREEN << "Constructeur par defaut (ClapTrap): " << RESET << std::endl;
 }
 
 //Constructeur ac nom
