@@ -24,10 +24,10 @@ class ClapTrap {
         ClapTrap &operator=( const ClapTrap &autre );//surcharge de l'operateur d'affectation
         ~ClapTrap();//destructeur
 
-        // std::string getName();
-        // int getH();
-        // int getE();
-        // int getA();
+        std::string getName() const;
+        int getH() const;
+        int getE() const;
+        int getA() const;
         void attack(const std::string &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

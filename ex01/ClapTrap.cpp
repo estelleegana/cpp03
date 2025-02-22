@@ -1,65 +1,61 @@
 #include "ClapTrap.hpp"
 
-//Constructeur par defaut
 ClapTrap::ClapTrap()
 {
-    std::cout << BOLD GREEN << "Constructeur par defaut (ClapTrap): " << RESET <<_name << " is born" << std::endl;
+    std::cout << BOLD GREEN << "Constructeur par defaut (ClapTrap): " << RESET << std::endl;
 }
 
-//Constructeur ac nom
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 {
     std::cout << BOLD GREEN << "Constructeur (ClapTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
-//Constructeur ac nom, hit points, energ points, attack dmg
 ClapTrap::ClapTrap(std::string name, int hp, int ep, int ad) : _name(name), _hp(hp), _ep(ep), _ad(ad)
 {
     std::cout << BOLD GREEN << "Constructeur (ClapTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
-//Constructeur de recopie
 ClapTrap::ClapTrap(const ClapTrap &autre)
 {
     *this = autre;
     std::cout << BOLD GREEN << "Constructeur de recopie (ClapTrap): " << RESET << autre._name << " copy is born" << std::endl;
 }
 
-//Surcharge de l'operateur d'affectation
 ClapTrap &ClapTrap::operator=(const ClapTrap &autre)
 {
-    _name = autre._name;
-    _hp = autre._hp;
-    _ep = autre._ep;
-    _ad = autre._ad;
+    _name = autre.getName();
+    _hp = autre.getH();
+    _ep = autre.getE();
+    _ad = autre.getA();
     return (*this);
 }
 
-//Destructeur
 ClapTrap::~ClapTrap()
 {
     std::cout << BOLD RED << "Destructeur (ClapTrap): " << RESET << _name << " seize to exist" << std::endl;
 }
 
-// std::string ClapTrap::getName()
-// {
-//     return _name;
-// }
 
-// int ClapTrap::getH()
-// {
-//     return _hp;
-// }
+std::string ClapTrap::getName() const
+{
+    return _name;
+}
 
-// int ClapTrap::getE()
-// {
-//     return _ep;
-// }
+int ClapTrap::getH() const
+{
+    return _hp;
+}
 
-// int ClapTrap::getA()
-// {
-//     return _ad;
-// }
+int ClapTrap::getE() const
+{
+    return _ep;
+}
+
+int ClapTrap::getA() const
+{
+    return _ad;
+}
+
 
 //coute 1 energy poiny (ep)
 void ClapTrap::attack(const std::string &target)
@@ -69,7 +65,7 @@ void ClapTrap::attack(const std::string &target)
         _ep = _ep - 1;
         std::cout << "ClapTrap " << _name << " attacks ";
         std::cout << target << ", causing ";
-        std::cout << _hp << " points of damage ! " << std::endl;
+        std::cout << _ad << " points of damage ! " << std::endl;
     }
     else if (_ep < 1)
         std::cout << "ClapTrap " << _name << " cant attack cause (s)he has no Energy points." << std::endl;
