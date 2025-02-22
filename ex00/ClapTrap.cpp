@@ -9,7 +9,7 @@ ClapTrap::ClapTrap()
 //Constructeur ac nom
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 {
-    std::cout << BOLD GREEN << "Constructeur (ClaptTrap): " << RESET <<_name << " is born" << std::endl;
+    std::cout << BOLD GREEN << "Constructeur (ClapTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
 //Constructeur de recopie
@@ -35,25 +35,25 @@ ClapTrap::~ClapTrap()
     std::cout << BOLD RED << "Destructeur (ClapTrap): " << RESET << _name << " seize to exist" << std::endl;
 }
 
-std::string ClapTrap::getName()
-{
-    return _name;
-}
+// std::string ClapTrap::getName()
+// {
+//     return _name;
+// }
 
-int ClapTrap::getH()
-{
-    return _hp;
-}
+// int ClapTrap::getH()
+// {
+//     return _hp;
+// }
 
-int ClapTrap::getE()
-{
-    return _ep;
-}
+// int ClapTrap::getE()
+// {
+//     return _ep;
+// }
 
-int ClapTrap::getA()
-{
-    return _ad;
-}
+// int ClapTrap::getA()
+// {
+//     return _ad;
+// }
 
 //coute 1 energy poiny (ep)
 void ClapTrap::attack(const std::string &target)
@@ -63,7 +63,7 @@ void ClapTrap::attack(const std::string &target)
         _ep = _ep - 1;
         std::cout << "ClapTrap " << _name << " attacks ";
         std::cout << target << ", causing ";
-        std::cout << _hp << " points of damage ! " << std::endl;
+        std::cout << _ad << " points of damage ! " << std::endl;
     }
     else if (_ep < 1)
         std::cout << _name << " cant attack cause (s)he has no Energy points." << std::endl;
