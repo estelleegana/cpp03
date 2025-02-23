@@ -7,7 +7,7 @@ ScavTrap::ScavTrap()
 }
 
 //Constructeur ac nom
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20), _name(name), _hp(100), _ep(50), _ad(20)
 {
     std::cout << BOLD GREEN << "Constructeur (ScavTrap): " << RESET <<_name << " is born" << std::endl;
 }
