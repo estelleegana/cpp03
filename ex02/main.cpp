@@ -1,16 +1,15 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    FlagTrap h("Hero");
-    
-    h.displayInfos();
-    h.beRepaired(100);
-    h.attack("a sheep");
-    h.takeDamage(100);
-    h.attack("une chevre");
-    h.displayInfos();
-    h.highFivesGuys();
+    FragTrap frag("polo");
+
+    frag.displayInfos();
+    frag.attack("Josh");
+    frag.takeDamage(10);
+    frag.beRepaired(10);
+    frag.highFivesGuys();
+    frag.displayInfos();
 }

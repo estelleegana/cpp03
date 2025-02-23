@@ -1,19 +1,19 @@
 #include "ScavTrap.hpp"
 
 // Constructeur par defaut
-ScavTrap::ScavTrap() : _hp(100), _ep(50), _ad(20)
+ScavTrap::ScavTrap()
 {
     std::cout << BOLD GREEN << "Constructeur par defaut (ScavTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
 //Constructeur ac nom
-ScavTrap::ScavTrap(std::string name) : _name(name), _hp(100), _ep(50), _ad(20)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20), _name(name), _hp(100), _ep(50), _ad(20)
 {
     std::cout << BOLD GREEN << "Constructeur (ScavTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
 //Constructeur de recopie
-ScavTrap::ScavTrap(const ScavTrap &autre)
+ScavTrap::ScavTrap(const ScavTrap &autre) : ClapTrap(autre)
 {
     *this = autre;
     std::cout << BOLD GREEN << "Constructeur de recopie (ScavTrap): " << RESET << autre._name << " copy is born" << std::endl;
@@ -22,10 +22,10 @@ ScavTrap::ScavTrap(const ScavTrap &autre)
 //Surcharge de l'operateur d'affectation
 ScavTrap &ScavTrap::operator=(const ScavTrap &autre)
 {
-    _name = autre._name;
-    _hp = autre._hp;
-    _ep = autre._ep;
-    _ad = autre._ad;
+    _name = autre.getName();
+    _hp = autre.getH();
+    _ep = autre.getE();
+    _ad = autre.getA();
     return (*this);
 }
 
@@ -43,7 +43,7 @@ void ScavTrap::attack(const std::string &target)
         _ep = _ep - 1;
         std::cout << "ScavTrap" << _name << " attacks ";
         std::cout << target << ", causing ";
-        std::cout << _hp << " points of damage ! " << std::endl;
+        std::cout << _ad << " points of damage ! " << std::endl;
     }
     else if (_ep < 1)
         std::cout << "ScavTrap" << _name << " cant attack cause (s)he has no Energy points." << std::endl;

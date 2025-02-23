@@ -9,7 +9,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 #fichiers sources
 SRCS = ClapTrap.cpp \
-	FlagTrap.cpp \
+	FragTrap.cpp \
 	main.cpp \
 	ScavTrap.cpp \
 
