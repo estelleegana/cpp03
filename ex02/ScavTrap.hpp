@@ -12,18 +12,12 @@
 
 class ScavTrap : public ClapTrap
 {
-    private:
-        std::string _name;
-        int _hp;
-        int _ep;
-        int _ad;
-
     public:
-        ScavTrap();//constructeur derive par defaut
-        ScavTrap(std::string name);//constructeur derive ac para
-        ScavTrap( const ScavTrap &autre );//constructeur derive de recopie
-        ScavTrap &operator=( const ScavTrap &autre );//surcharge de l'operateur d'affectation
-        ~ScavTrap();//destructeur derive
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap( const ScavTrap &autre );
+        ScavTrap &operator=( const ScavTrap &autre );
+        ~ScavTrap();
 
         void guardGate();
         void attack(const std::string &target);

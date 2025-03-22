@@ -3,43 +3,30 @@
 
 int main()
 {
-    ScavTrap    scav("Bot");
-    ClapTrap    clap("Mario");
-    
-    ScavTrap    scav2(scav);
-    ClapTrap    clap2(clap);
+	std::cout << "---- CONSTRUCTORS ----" << std::endl;
+	ClapTrap carapuce("Carapuce");
+	ScavTrap bulbizar("Bulbizar");
+	ScavTrap pikachu;
+	ScavTrap bulbiclone = bulbizar;
 
-    std::cout << std::endl;
+	std::cout << std::endl << "---- VALID ACTIONS ----" << std::endl;
+	carapuce.attack("Bulbizar");
+	bulbizar.attack("Carapuce");
+	bulbizar.takeDamage(2);
+	bulbizar.beRepaired(1);
+	bulbizar.guardGate();
 
-    scav.attack("Mario");
-    clap.takeDamage(20);
-    clap.beRepaired(10);
-    scav.guardGate();
+	std::cout << std::endl << "---- INVALID ACTIONS ----" << std::endl;
+	bulbizar.takeDamage(100);
+	bulbizar.attack("Carapuce");
+	bulbizar.takeDamage(2);
+	bulbizar.beRepaired(2);
+	bulbizar.guardGate();
 
-    std::cout << std::endl << std::endl;
+	for (int i = 0; i < 51; i++) {
+		bulbiclone.attack("Carapuce");
+	}
 
-    // test energy points
-    clap.displayInfos();
-
-    std::cout << std::endl;
-
-    for (int i = 0; i < 11; i++)
-        clap.beRepaired(20);
-    clap.displayInfos();
-
-    std::cout << std::endl;
-
-    // test energy points
-    scav.displayInfos();
-    std::cout << std::endl;
-    for (int i = 0; i < 25; i++)
-    {
-        scav.attack("Mario");
-        // messages de scav identique au message de clap
-        scav.takeDamage(20); 
-        scav.beRepaired(20);
-        // scav.displayInfos();
-    }
-    scav.displayInfos();
-    return (0);
+	std::cout << std::endl << "---- DESTRUCTORS ----" << std::endl;
+	return 0;
 }

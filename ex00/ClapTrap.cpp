@@ -1,25 +1,21 @@
 #include "ClapTrap.hpp"
 
-//Constructeur par defaut
 ClapTrap::ClapTrap()
 {
-    std::cout << BOLD GREEN << "Constructeur par defaut (ClapTrap): " << RESET << std::endl;
+    std::cout << BOLD GREEN << "Constructeur par defaut (ClapTrap)" << RESET << std::endl;
 }
 
-//Constructeur ac nom
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 {
     std::cout << BOLD GREEN << "Constructeur (ClapTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
-//Constructeur de recopie
-ClapTrap::ClapTrap(const ClapTrap &autre)
+ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-    *this = autre;
-    std::cout << BOLD GREEN << "Constructeur de recopie (ClapTrap): " << RESET << autre._name << " copy is born" << std::endl;
+    *this = copy;
+    std::cout << BOLD GREEN << "Constructeur de recopie (ClapTrap): " << RESET << copy._name << " copy is born" << std::endl;
 }
 
-//Surcharge de l'operateur d'affectation
 ClapTrap &ClapTrap::operator=(const ClapTrap &autre)
 {
     _name = autre._name;
@@ -29,33 +25,18 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &autre)
     return (*this);
 }
 
-//Destructeur
 ClapTrap::~ClapTrap()
 {
     std::cout << BOLD RED << "Destructeur (ClapTrap): " << RESET << _name << " seize to exist" << std::endl;
 }
 
-// std::string ClapTrap::getName()
-// {
-//     return _name;
-// }
 
-// int ClapTrap::getH()
-// {
-//     return _hp;
-// }
 
-// int ClapTrap::getE()
-// {
-//     return _ep;
-// }
 
-// int ClapTrap::getA()
-// {
-//     return _ad;
-// }
 
-//coute 1 energy poiny (ep)
+
+//CT.attack(target) => target._hp = _hp - ct._ad
+//coute 1 _ep
 void ClapTrap::attack(const std::string &target)
 {
     if (_ep > 0 && _hp > 0)
@@ -65,9 +46,9 @@ void ClapTrap::attack(const std::string &target)
         std::cout << target << ", causing ";
         std::cout << _ad << " points of damage ! " << std::endl;
     }
-    else if (_ep < 1)
+    else if (_ep <= 0)
         std::cout << _name << " cant attack cause (s)he has no Energy points." << std::endl;
-    else if (_hp < 1)
+    else if (_hp <= 0)
         std::cout << _name << " cant attack cause (s)he has no Hit points." << std::endl;
 }
 
@@ -86,6 +67,7 @@ void ClapTrap::takeDamage(unsigned int amount)
         std::cout << "ClapTrap " << _name << " already has 0 hit points." << std::endl;
 }
 
+//CT.berepaired(n) => CT._hp = _hp + n
 //coute 1 energy point (ep)
 void ClapTrap::beRepaired(unsigned int amount)
 {

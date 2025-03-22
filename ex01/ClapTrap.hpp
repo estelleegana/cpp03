@@ -9,8 +9,9 @@
 #define GREEN "\033[38;2;0;255;0m"
 #define RESET "\033[0m"
 
-class ClapTrap {
-    private:
+class ClapTrap
+{
+    protected:
         std::string _name;
         int _hp;
         int _ep;
@@ -24,10 +25,6 @@ class ClapTrap {
         ClapTrap &operator=( const ClapTrap &autre );//surcharge de l'operateur d'affectation
         ~ClapTrap();//destructeur
 
-        std::string getName() const;
-        int getH() const;
-        int getE() const;
-        int getA() const;
         void attack(const std::string &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

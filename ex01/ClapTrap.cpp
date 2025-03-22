@@ -15,18 +15,18 @@ ClapTrap::ClapTrap(std::string name, int hp, int ep, int ad) : _name(name), _hp(
     std::cout << BOLD GREEN << "Constructeur (ClapTrap): " << RESET <<_name << " is born" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &autre)
+ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-    *this = autre;
-    std::cout << BOLD GREEN << "Constructeur de recopie (ClapTrap): " << RESET << autre._name << " copy is born" << std::endl;
+    *this = copy;
+    std::cout << BOLD GREEN << "Constructeur de recopie (ClapTrap): " << RESET << copy._name << " copy is born" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &autre)
 {
-    _name = autre.getName();
-    _hp = autre.getH();
-    _ep = autre.getE();
-    _ad = autre.getA();
+    _name = autre._name;
+    _hp = autre._hp;
+    _ep = autre._ep;
+    _ad = autre._ad;
     return (*this);
 }
 
@@ -36,25 +36,11 @@ ClapTrap::~ClapTrap()
 }
 
 
-std::string ClapTrap::getName() const
-{
-    return _name;
-}
 
-int ClapTrap::getH() const
-{
-    return _hp;
-}
 
-int ClapTrap::getE() const
-{
-    return _ep;
-}
 
-int ClapTrap::getA() const
-{
-    return _ad;
-}
+
+
 
 
 //coute 1 energy poiny (ep)

@@ -12,18 +12,12 @@
 
 class FragTrap : public ClapTrap
 {
-    private:
-        std::string _name;
-        int _hp;
-        int _ep;
-        int _ad;
-
     public:
-        FragTrap();//constructeur derive par defaut
-        FragTrap(std::string name);//constructeur derive ac para
-        FragTrap( const FragTrap &autre );//constructeur derive de recopie
-        FragTrap &operator=( const FragTrap &autre );//surcharge de l'operateur d'affectation
-        ~FragTrap();//destructeur derive
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap( const FragTrap &autre );
+        FragTrap &operator=( const FragTrap &autre );
+        ~FragTrap();
 
         void highFivesGuys(void);
 };

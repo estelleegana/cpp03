@@ -20,7 +20,7 @@
 class ClapTrap {
     private:
         std::string _name;
-        int _hp;
+        int _hp;//health of the claptrap
         int _ep;
         int _ad;
 
@@ -31,10 +31,6 @@ class ClapTrap {
         ClapTrap &operator=( const ClapTrap &autre );//surcharge de l'operateur d'affectation
         ~ClapTrap();//destructeur
 
-        // std::string getName();
-        // int getH();
-        // int getE();
-        // int getA();
         void attack(const std::string &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

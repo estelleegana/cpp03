@@ -2,36 +2,37 @@
 
 int main()
 {
-    ClapTrap clap("Paul");
-    ClapTrap copy(clap);
-    ClapTrap neww = ClapTrap();
+	std::cout << "---- CONSTRUCTORS ----" << std::endl;
+	ClapTrap bulbizar("Bulbizar");
+	ClapTrap salameche("Salamèche");
+	ClapTrap carapuce("Carapuce");
+	ClapTrap mew("Mew");
+	ClapTrap pikachu;
+	ClapTrap mewTwo(mew);
+	ClapTrap mewThree = carapuce;
 
-    neww = clap;
+	std::cout << std::endl << "---- VALID ACTIONS ----" << std::endl;
+	bulbizar.attack("Salamèche");
+	salameche.takeDamage(2);
+	carapuce.beRepaired(1);
 
-    std::cout << std::endl << "--- copy and new ---" << std::endl;
-    copy.attack("Pierre");
-    copy.attack("Pierre");
-    copy.displayInfos();
-    neww.attack("Pierre");
-    neww.displayInfos();
+	std::cout << std::endl << "---- INVALID ACTIONS ----" << std::endl;
+	bulbizar.takeDamage(10);
+	bulbizar.beRepaired(10);
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
+	salameche.attack("Bulbizar");
 
-    std::cout << std::endl << "--- clap ---" << std::endl;
-    clap.displayInfos();
-    std::cout << std::endl;
-    clap.beRepaired(5);
-    clap.displayInfos();
-    clap.attack("Pierre");
-    clap.displayInfos();
-
-    clap.takeDamage(50);
-    clap.displayInfos();
-    for (int i = 0; i < 8 ; i++) {
-        clap.beRepaired(10);
-        // clap.displayInfos();
-    }
-    clap.displayInfos();
-    clap.attack("Pierre");
-    clap.takeDamage(50);
-    clap.displayInfos();
-    std::cout << std::endl;
+	std::cout << std::endl << "---- DESTRUCTORS ----" << std::endl;
+	return 0;
 }
+
+//https://github.com/sylvainnicolet-42/42-CPP-Module-03/blob/master/ex00/srcs/main.cpp
